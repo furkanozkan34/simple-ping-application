@@ -1,0 +1,23 @@
+#Ping with ICMP properties
+pingCommand: ping
+pingCommandPrefix: -c #This should be '-n' for Windows OS
+pingCommandCount: 5
+fixedDelaySecondForICMP: 10
+
+#Ping with TCP properties
+timeoutDurationForTCP: 30
+fixedDelaySecondForTCP: 10
+
+#Trace Route properties
+traceRouteCommand: traceroute #This should be 'tracert' for Windows OS
+fixedDelaySecondForTraceRoute: 20
+
+# Report Service properties
+givenUrlToPostReport: localhost:8080/report
+
+hosts:
+  - bilyoner.com
+  - google.com
+  - youtube.com
+  - facebook.com
+

@@ -48,6 +48,4 @@ public class ReportModel {
     public void setTrace(String trace) {
         this.trace = trace;
     }
-
-
 }

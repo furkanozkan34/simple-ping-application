@@ -16,7 +16,6 @@ fixedDelaySecondForTraceRoute: 20
 givenUrlToPostReport: localhost:8080/report
 
 hosts:
-  - denemeaaaaawas.com
   - bilyoner.com
   - google.com
   - youtube.com

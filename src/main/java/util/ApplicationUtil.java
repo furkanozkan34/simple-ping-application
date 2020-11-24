@@ -19,7 +19,6 @@ public class ApplicationUtil {
             instance = new ApplicationUtil();
             instance.getProperties();
             instance.getObjectMapper();
-            instance.createStoreage();
         }
         return instance;
     }
@@ -38,9 +37,5 @@ public class ApplicationUtil {
 
     public ObjectMapper getObjectMapper() {
         return new ObjectMapper();
-    }
-
-    public File createStoreage() {
-        return new File("src/main/resources/store/file.txt");
     }
 }

@@ -1,5 +1,6 @@
 package service;
 
+import model.constant.Constant;
 import model.enums.PingType;
 import model.pojo.ICPMResultModel;
 import org.apache.logging.log4j.LogManager;
@@ -37,7 +38,7 @@ public class PingWithICMPService implements IPinger {
                 List<String> errors = errorStream.lines().filter(Objects::nonNull).collect(Collectors.toList());
                 if (!errors.isEmpty()) {
                     var errorMessage = String.join(",", errors);
-                    log.error("Error occurred when processing Ping-ICMP for this host :{}, with errorMessage :{}", host, errorMessage);
+                    log.error("Error occurred when processing Ping-ICMP  host :{}, errorMessage :{}", host, errorMessage);
                     ReportService.report(host, PingType.ICMP, errorMessage);
                     return;
                 }
@@ -46,18 +47,18 @@ public class PingWithICMPService implements IPinger {
             ICPMResultModel icpmResultModel = new ICPMResultModel(host, results);
             ResultStoreService.storeICMPResult(icpmResultModel);
         } catch (Exception e) {
-            log.error("Error occurred when processing Ping-ICMP for this host :{}, with error", host, e);
+            log.error("Error occurred when processing Ping-ICMP for this host :{}, error:", host, e);
             ReportService.report(host, PingType.ICMP, e.getMessage());
         }
     }
 
     private String getCommand(DynamicProperties dynamicProperties, String host) {
         return dynamicProperties.getPingCommand()
-                .concat(" ")
+                .concat(Constant.BLANK)
                 .concat(dynamicProperties.getPingCommandPrefix())
-                .concat(" ")
+                .concat(Constant.BLANK)
                 .concat(dynamicProperties.getPingCommandCount())
-                .concat(" ")
+                .concat(Constant.BLANK)
                 .concat(host);
     }
 }

@@ -1,5 +1,6 @@
 package service;
 
+import model.constant.Constant;
 import model.enums.PingType;
 import model.pojo.TCPResultModel;
 import org.apache.logging.log4j.LogManager;
@@ -27,8 +28,8 @@ public class PingWithTCPService implements IPinger {
 
         try {
             HttpClient client = HttpClient.newHttpClient();
-            var timeoutDuration = ApplicationUtil.getInstance().getProperties().getFixedDelaySecondForTCP();
-            var uri = "https://www.".concat(host);
+            var timeoutDuration = ApplicationUtil.getInstance().getProperties().getTimeoutDurationForTCP();
+            var uri = Constant.HTTPS.concat(host);
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(uri))
                     .timeout(Duration.ofSeconds(timeoutDuration))
@@ -40,7 +41,7 @@ public class PingWithTCPService implements IPinger {
             TCPResultModel tcpResultModel = new TCPResultModel(uri, responseTime, response.statusCode());
             ResultStoreService.storeTCPResult(tcpResultModel);
         } catch (Exception e) {
-            log.error("Error occurred when processing Ping-TCP for this host :{}, with error", host, e);
+            log.error("Error occurred when processing Ping-TCP for this host :{}, error", host, e);
             ReportService.report(host, PingType.TCP, e.getMessage());
         }
     }

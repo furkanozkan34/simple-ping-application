@@ -1,5 +1,6 @@
 package scheduler.trigger;
 
+import model.constant.Constant;
 import model.enums.PingType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,61 +18,61 @@ public class JobTrigger {
 
         DynamicProperties dynamicProperties = ApplicationUtil.getInstance().getProperties();
         triggerForICMP(dynamicProperties.getFixedDelaySecondForICMP().intValue());
-     //   triggerForTCP(dynamicProperties.getFixedDelaySecondForTCP().intValue());
-   //     triggerForTraceRoute(dynamicProperties.getFixedDelaySecondForTraceRoute().intValue());
+        triggerForTCP(dynamicProperties.getFixedDelaySecondForTCP().intValue());
+        triggerForTraceRoute(dynamicProperties.getFixedDelaySecondForTraceRoute().intValue());
     }
 
     private void triggerForICMP(int fixedDelay) {
 
         try {
-            JobDetail jobDetail = JobBuilder.newJob(PingJob.class).withIdentity("ICPMJob", "group1").build();
-            jobDetail.getJobDataMap().put("PING_TYPE", PingType.ICMP);
+            JobDetail jobDetail = JobBuilder.newJob(PingJob.class).withIdentity(Constant.ICMP_JOB_NAME, Constant.ICMP_JOB_GROUP).build();
+            jobDetail.getJobDataMap().put(Constant.JOB_DATA_MAP_KEY, PingType.ICMP);
 
             Trigger trigger = TriggerBuilder.newTrigger()
-                    .withIdentity("ICPMJob", "group1")
+                    .withIdentity(Constant.ICMP_JOB_NAME, Constant.ICMP_JOB_GROUP)
                     .withSchedule(SimpleScheduleBuilder.repeatSecondlyForever(fixedDelay))
                     .build();
             Scheduler scheduler = new StdSchedulerFactory().getScheduler();
             scheduler.start();
             scheduler.scheduleJob(jobDetail, trigger);
         } catch (Exception e) {
-            log.error("PingICMP job could'nt start because of this error :", e);
+            log.error("PingICMP job could'nt start because of this error:", e);
         }
     }
 
     private void triggerForTCP(int fixedDelay) {
 
         try {
-            JobDetail jobDetail = JobBuilder.newJob(PingJob.class).withIdentity("TCPJob", "group2").build();
-            jobDetail.getJobDataMap().put("PING_TYPE", PingType.TCP);
+            JobDetail jobDetail = JobBuilder.newJob(PingJob.class).withIdentity(Constant.TCP_JOB_NAME, Constant.TCP_JOB_GROUP).build();
+            jobDetail.getJobDataMap().put(Constant.JOB_DATA_MAP_KEY, PingType.TCP);
 
             Trigger trigger = TriggerBuilder.newTrigger()
-                    .withIdentity("TCPJob", "group2")
+                    .withIdentity(Constant.TCP_JOB_NAME, Constant.TCP_JOB_GROUP)
                     .withSchedule(SimpleScheduleBuilder.repeatSecondlyForever(fixedDelay))
                     .build();
             Scheduler scheduler = new StdSchedulerFactory().getScheduler();
             scheduler.start();
             scheduler.scheduleJob(jobDetail, trigger);
         } catch (Exception e) {
-            log.error("PingTCP job could'nt start because of this error :", e);
+            log.error("PingTCP job could'nt start because of this error:", e);
         }
     }
 
     private void triggerForTraceRoute(int fixedDelay) {
 
         try {
-            JobDetail jobDetail = JobBuilder.newJob(PingJob.class).withIdentity("TraceRouteJob", "group3").build();
-            jobDetail.getJobDataMap().put("PING_TYPE", PingType.TRACE_ROUTE);
+            JobDetail jobDetail = JobBuilder.newJob(PingJob.class).withIdentity(Constant.TRACE_ROUTE_JOB_NAME, Constant.TRACE_ROUTE_GROUP).build();
+            jobDetail.getJobDataMap().put(Constant.JOB_DATA_MAP_KEY, PingType.TRACE_ROUTE);
 
             Trigger trigger = TriggerBuilder.newTrigger()
-                    .withIdentity("TraceRouteJob", "group3")
+                    .withIdentity(Constant.TRACE_ROUTE_JOB_NAME, Constant.TRACE_ROUTE_GROUP)
                     .withSchedule(SimpleScheduleBuilder.repeatSecondlyForever(fixedDelay))
                     .build();
             Scheduler scheduler = new StdSchedulerFactory().getScheduler();
             scheduler.start();
             scheduler.scheduleJob(jobDetail, trigger);
         } catch (Exception e) {
-            log.error("TraceRoute job could'nt start because of this error :", e);
+            log.error("TraceRoute job could'nt start because of this error:", e);
         }
     }
 }

@@ -37,79 +37,39 @@ public class DynamicProperties {
         return hosts;
     }
 
-    public void setHosts(List<String> hosts) {
-        this.hosts = hosts;
-    }
-
     public String getPingCommand() {
         return pingCommand;
-    }
-
-    public void setPingCommand(String pingCommand) {
-        this.pingCommand = pingCommand;
     }
 
     public String getPingCommandPrefix() {
         return pingCommandPrefix;
     }
 
-    public void setPingCommandPrefix(String pingCommandPrefix) {
-        this.pingCommandPrefix = pingCommandPrefix;
-    }
-
     public String getPingCommandCount() {
         return pingCommandCount;
-    }
-
-    public void setPingCommandCount(String pingCommandCount) {
-        this.pingCommandCount = pingCommandCount;
     }
 
     public Long getFixedDelaySecondForICMP() {
         return fixedDelaySecondForICMP;
     }
 
-    public void setFixedDelaySecondForICMP(Long fixedDelaySecondForICMP) {
-        this.fixedDelaySecondForICMP = fixedDelaySecondForICMP;
-    }
-
     public long getTimeoutDurationForTCP() {
         return timeoutDurationForTCP;
-    }
-
-    public void setTimeoutDurationForTCP(long timeoutDurationForTCP) {
-        this.timeoutDurationForTCP = timeoutDurationForTCP;
     }
 
     public Long getFixedDelaySecondForTCP() {
         return fixedDelaySecondForTCP;
     }
 
-    public void setFixedDelaySecondForTCP(Long fixedDelaySecondForTCP) {
-        this.fixedDelaySecondForTCP = fixedDelaySecondForTCP;
-    }
-
     public String getTraceRouteCommand() {
         return traceRouteCommand;
-    }
-
-    public void setTraceRouteCommand(String traceRouteCommand) {
-        this.traceRouteCommand = traceRouteCommand;
     }
 
     public Long getFixedDelaySecondForTraceRoute() {
         return fixedDelaySecondForTraceRoute;
     }
 
-    public void setFixedDelaySecondForTraceRoute(Long fixedDelaySecondForTraceRoute) {
-        this.fixedDelaySecondForTraceRoute = fixedDelaySecondForTraceRoute;
-    }
-
     public String getGivenUrlToPostReport() {
         return givenUrlToPostReport;
-    }
-
-    public void setGivenUrlToPostReport(String givenUrlToPostReport) {
-        this.givenUrlToPostReport = givenUrlToPostReport;
     }
 }

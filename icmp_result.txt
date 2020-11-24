@@ -1,0 +1,196 @@
+ICMP			bilyoner.com			PING bilyoner.com (92.45.9.60): 56 data bytes
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=0 ttl=248 time=11.592 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=1 ttl=248 time=12.384 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=2 ttl=248 time=11.274 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=3 ttl=248 time=10.092 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=4 ttl=248 time=13.649 ms
+ICMP			bilyoner.com			--- bilyoner.com ping statistics ---
+ICMP			bilyoner.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			bilyoner.com			round-trip min/avg/max/stddev = 10.092/11.798/13.649/1.183 ms
+
+ICMP			facebook.com			PING facebook.com (157.240.9.35): 56 data bytes
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=0 ttl=57 time=19.549 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=1 ttl=57 time=21.618 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=2 ttl=57 time=20.331 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=3 ttl=57 time=19.231 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=4 ttl=57 time=18.470 ms
+ICMP			facebook.com			--- facebook.com ping statistics ---
+ICMP			facebook.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			facebook.com			round-trip min/avg/max/stddev = 18.470/19.840/21.618/1.071 ms
+
+ICMP			youtube.com			PING youtube.com (172.217.169.142): 56 data bytes
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=0 ttl=119 time=26.191 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=1 ttl=119 time=28.419 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=2 ttl=119 time=27.447 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=3 ttl=119 time=27.124 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=4 ttl=119 time=25.749 ms
+ICMP			youtube.com			--- youtube.com ping statistics ---
+ICMP			youtube.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			youtube.com			round-trip min/avg/max/stddev = 25.749/26.986/28.419/0.943 ms
+
+ICMP			google.com			PING google.com (172.217.169.110): 56 data bytes
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=0 ttl=119 time=30.331 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=1 ttl=119 time=26.239 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=2 ttl=119 time=31.548 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=3 ttl=119 time=26.392 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=4 ttl=119 time=27.541 ms
+ICMP			google.com			--- google.com ping statistics ---
+ICMP			google.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			google.com			round-trip min/avg/max/stddev = 26.239/28.410/31.548/2.148 ms
+
+ICMP			bilyoner.com			PING bilyoner.com (92.45.9.60): 56 data bytes
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=0 ttl=248 time=11.458 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=1 ttl=248 time=10.796 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=2 ttl=248 time=9.805 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=3 ttl=248 time=11.929 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=4 ttl=248 time=10.834 ms
+ICMP			bilyoner.com			--- bilyoner.com ping statistics ---
+ICMP			bilyoner.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			bilyoner.com			round-trip min/avg/max/stddev = 9.805/10.964/11.929/0.716 ms
+
+ICMP			facebook.com			PING facebook.com (157.240.9.35): 56 data bytes
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=0 ttl=57 time=19.446 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=1 ttl=57 time=19.652 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=2 ttl=57 time=25.792 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=3 ttl=57 time=21.328 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=4 ttl=57 time=19.894 ms
+ICMP			facebook.com			--- facebook.com ping statistics ---
+ICMP			facebook.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			facebook.com			round-trip min/avg/max/stddev = 19.446/21.222/25.792/2.378 ms
+
+ICMP			youtube.com			PING youtube.com (172.217.169.142): 56 data bytes
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=0 ttl=119 time=27.392 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=1 ttl=119 time=27.889 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=2 ttl=119 time=26.509 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=3 ttl=119 time=28.865 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=4 ttl=119 time=28.159 ms
+ICMP			youtube.com			--- youtube.com ping statistics ---
+ICMP			youtube.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			youtube.com			round-trip min/avg/max/stddev = 26.509/27.763/28.865/0.787 ms
+
+ICMP			google.com			PING google.com (172.217.169.110): 56 data bytes
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=0 ttl=119 time=26.659 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=1 ttl=119 time=27.075 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=2 ttl=119 time=26.462 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=3 ttl=119 time=28.499 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=4 ttl=119 time=27.726 ms
+ICMP			google.com			--- google.com ping statistics ---
+ICMP			google.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			google.com			round-trip min/avg/max/stddev = 26.462/27.284/28.499/0.746 ms
+
+ICMP			bilyoner.com			PING bilyoner.com (92.45.9.60): 56 data bytes
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=0 ttl=248 time=11.307 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=1 ttl=248 time=13.067 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=2 ttl=248 time=10.571 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=3 ttl=248 time=9.833 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=4 ttl=248 time=9.837 ms
+ICMP			bilyoner.com			--- bilyoner.com ping statistics ---
+ICMP			bilyoner.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			bilyoner.com			round-trip min/avg/max/stddev = 9.833/10.923/13.067/1.203 ms
+
+ICMP			facebook.com			PING facebook.com (157.240.9.35): 56 data bytes
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=0 ttl=57 time=19.828 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=1 ttl=57 time=25.688 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=2 ttl=57 time=19.412 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=3 ttl=57 time=19.900 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=4 ttl=57 time=18.871 ms
+ICMP			facebook.com			--- facebook.com ping statistics ---
+ICMP			facebook.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			facebook.com			round-trip min/avg/max/stddev = 18.871/20.740/25.688/2.501 ms
+
+ICMP			youtube.com			PING youtube.com (172.217.169.142): 56 data bytes
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=0 ttl=119 time=26.377 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=1 ttl=119 time=31.872 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=2 ttl=119 time=27.513 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=3 ttl=119 time=26.046 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=4 ttl=119 time=26.781 ms
+ICMP			youtube.com			--- youtube.com ping statistics ---
+ICMP			youtube.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			youtube.com			round-trip min/avg/max/stddev = 26.046/27.718/31.872/2.134 ms
+
+ICMP			google.com			PING google.com (172.217.169.110): 56 data bytes
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=0 ttl=119 time=26.778 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=1 ttl=119 time=27.408 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=2 ttl=119 time=27.799 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=3 ttl=119 time=26.382 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=4 ttl=119 time=26.453 ms
+ICMP			google.com			--- google.com ping statistics ---
+ICMP			google.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			google.com			round-trip min/avg/max/stddev = 26.382/26.964/27.799/0.553 ms
+
+ICMP			bilyoner.com			PING bilyoner.com (92.45.9.60): 56 data bytes
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=0 ttl=248 time=9.864 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=1 ttl=248 time=10.734 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=2 ttl=248 time=29.569 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=3 ttl=248 time=10.713 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=4 ttl=248 time=11.916 ms
+ICMP			bilyoner.com			--- bilyoner.com ping statistics ---
+ICMP			bilyoner.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			bilyoner.com			round-trip min/avg/max/stddev = 9.864/14.559/29.569/7.533 ms
+
+ICMP			facebook.com			PING facebook.com (157.240.9.35): 56 data bytes
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=0 ttl=57 time=17.877 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=1 ttl=57 time=19.145 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=2 ttl=57 time=37.620 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=3 ttl=57 time=19.164 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=4 ttl=57 time=20.073 ms
+ICMP			facebook.com			--- facebook.com ping statistics ---
+ICMP			facebook.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			facebook.com			round-trip min/avg/max/stddev = 17.877/22.776/37.620/7.455 ms
+
+ICMP			google.com			PING google.com (172.217.169.110): 56 data bytes
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=0 ttl=119 time=28.784 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=1 ttl=119 time=27.988 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=2 ttl=119 time=50.986 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=3 ttl=119 time=25.930 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=4 ttl=119 time=27.220 ms
+ICMP			google.com			--- google.com ping statistics ---
+ICMP			google.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			google.com			round-trip min/avg/max/stddev = 25.930/32.182/50.986/9.449 ms
+
+ICMP			youtube.com			PING youtube.com (172.217.169.142): 56 data bytes
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=0 ttl=119 time=27.697 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=1 ttl=119 time=27.474 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=2 ttl=119 time=44.173 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=3 ttl=119 time=28.825 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=4 ttl=119 time=27.652 ms
+ICMP			youtube.com			--- youtube.com ping statistics ---
+ICMP			youtube.com			5 packets transmitted, 5 packets received, 0.0% packet loss
+ICMP			youtube.com			round-trip min/avg/max/stddev = 27.474/31.164/44.173/6.522 ms
+
+ICMP			google.com			PING google.com (172.217.169.110): 56 data bytes
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=0 ttl=119 time=30.195 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=1 ttl=119 time=27.707 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=2 ttl=119 time=26.998 ms
+ICMP			google.com			64 bytes from 172.217.169.110: icmp_seq=3 ttl=119 time=25.988 ms
+ICMP			google.com			--- google.com ping statistics ---
+ICMP			google.com			4 packets transmitted, 4 packets received, 0.0% packet loss
+ICMP			google.com			round-trip min/avg/max/stddev = 25.988/27.722/30.195/1.553 ms
+
+ICMP			bilyoner.com			PING bilyoner.com (92.45.9.60): 56 data bytes
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=0 ttl=248 time=14.675 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=1 ttl=248 time=12.380 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=2 ttl=248 time=10.515 ms
+ICMP			bilyoner.com			64 bytes from 92.45.9.60: icmp_seq=3 ttl=248 time=9.192 ms
+ICMP			bilyoner.com			--- bilyoner.com ping statistics ---
+ICMP			bilyoner.com			4 packets transmitted, 4 packets received, 0.0% packet loss
+ICMP			bilyoner.com			round-trip min/avg/max/stddev = 9.192/11.691/14.675/2.062 ms
+
+ICMP			facebook.com			PING facebook.com (157.240.9.35): 56 data bytes
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=0 ttl=57 time=21.504 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=1 ttl=57 time=21.119 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=2 ttl=57 time=19.351 ms
+ICMP			facebook.com			64 bytes from 157.240.9.35: icmp_seq=3 ttl=57 time=19.140 ms
+ICMP			facebook.com			--- facebook.com ping statistics ---
+ICMP			facebook.com			4 packets transmitted, 4 packets received, 0.0% packet loss
+ICMP			facebook.com			round-trip min/avg/max/stddev = 19.140/20.279/21.504/1.045 ms
+
+ICMP			youtube.com			PING youtube.com (172.217.169.142): 56 data bytes
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=0 ttl=119 time=29.284 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=1 ttl=119 time=27.982 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=2 ttl=119 time=27.594 ms
+ICMP			youtube.com			64 bytes from 172.217.169.142: icmp_seq=3 ttl=119 time=27.756 ms
+ICMP			youtube.com			--- youtube.com ping statistics ---
+ICMP			youtube.com			4 packets transmitted, 4 packets received, 0.0% packet loss
+ICMP			youtube.com			round-trip min/avg/max/stddev = 27.594/28.154/29.284/0.667 ms
+

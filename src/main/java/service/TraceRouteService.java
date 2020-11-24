@@ -1,5 +1,6 @@
 package service;
 
+import model.constant.Constant;
 import model.enums.PingType;
 import model.pojo.TraceRouteResultModel;
 import org.apache.logging.log4j.LogManager;
@@ -25,7 +26,7 @@ public class TraceRouteService implements IPinger {
     public void run() {
 
         try {
-            var command = ApplicationUtil.getInstance().getProperties().getTraceRouteCommand().concat(" ").concat(host);
+            var command = ApplicationUtil.getInstance().getProperties().getTraceRouteCommand().concat(Constant.BLANK).concat(host);
             Process p = Runtime.getRuntime().exec(command);
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(p.getInputStream()));
             List<String> results = inputStream.lines().filter(Objects::nonNull).collect(Collectors.toList());
@@ -44,7 +45,7 @@ public class TraceRouteService implements IPinger {
             TraceRouteResultModel traceRouteResultModel = new TraceRouteResultModel(host, results);
             ResultStoreService.storeTraceRouteResult(traceRouteResultModel);
         } catch (Exception e) {
-            log.error("Error occurred when processing TraceRoute for this host :{}, with error", host, e);
+            log.error("Error occurred when processing TraceRoute for this host :{},  error:", host, e);
             ReportService.report(host, PingType.TRACE_ROUTE, e.getMessage());
         }
     }

@@ -1,5 +1,6 @@
 package scheduler.job;
 
+import model.constant.Constant;
 import model.enums.PingType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -17,11 +18,11 @@ public class PingJob implements Job {
 
         try {
             JobDataMap dataMap = jobExecutionContext.getJobDetail().getJobDataMap();
-            var pingType = (PingType) dataMap.get("PING_TYPE");
+            var pingType = (PingType) dataMap.get(Constant.JOB_DATA_MAP_KEY);
             PingExecutor pingExecutor = new PingExecutor();
             pingExecutor.run(pingType);
         } catch (Exception e) {
-            log.error("Undefined PingType, job couldn't start with error", e);
+            log.error("Undefined PingType, job couldn't start because of this error:", e);
         }
     }
 }

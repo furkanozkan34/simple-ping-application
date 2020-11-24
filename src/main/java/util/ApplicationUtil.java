@@ -41,6 +41,6 @@ public class ApplicationUtil {
     }
 
     public File createStoreage() {
-        return new File("store/file.txt");
+        return new File("src/main/resources/store/file.txt");
     }
 }

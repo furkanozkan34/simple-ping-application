@@ -6,9 +6,14 @@ import model.pojo.TCPResultModel;
 import model.pojo.TraceRouteResultModel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import util.ApplicationUtil;
+
+import java.io.File;
 
 class ResultStoreService {
 
+    private static final ObjectMapper objectMapper = ApplicationUtil.getInstance().getObjectMapper();
+    private static final File file = ApplicationUtil.getInstance().createStoreage();
     private static final Logger log = LogManager.getLogger(ResultStoreService.class);
 
     private ResultStoreService() {
@@ -17,7 +22,6 @@ class ResultStoreService {
     static void storeICMPResult(ICPMResultModel icpmResultModel) {
         // store in somewhere
         try {
-            ObjectMapper objectMapper = new ObjectMapper();
             String result = objectMapper.writeValueAsString(icpmResultModel.getIcmpResults());
             log.info("Ping-ICMP Result host :{}, result :{}", icpmResultModel.getHost(), result);
         } catch (Exception e) {
@@ -28,7 +32,6 @@ class ResultStoreService {
     static void storeTCPResult(TCPResultModel tcpResultModel) {
         // store in somewhere
         try {
-            ObjectMapper objectMapper = new ObjectMapper();
             String result = objectMapper.writeValueAsString(tcpResultModel);
             log.info("Ping-TCP Result host :{}, result :{}", tcpResultModel.getUrl(), result);
         } catch (Exception e) {
@@ -39,7 +42,6 @@ class ResultStoreService {
     static void storeTraceRouteResult(TraceRouteResultModel traceRouteResultModel) {
         // store in somewhere
         try {
-            ObjectMapper objectMapper = new ObjectMapper();
             String result = objectMapper.writeValueAsString(traceRouteResultModel.getTraceRouteResults());
             log.info("TraceRoute  Result host :{}, result :{}", traceRouteResultModel.getHost(), result);
         } catch (Exception e) {

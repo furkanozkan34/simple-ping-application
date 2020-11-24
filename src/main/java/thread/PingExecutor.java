@@ -3,7 +3,6 @@ package thread;
 import model.enums.PingType;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import scheduler.trigger.JobTrigger;
 import service.IPinger;
 import service.PingWithICMPService;
 import service.PingWithTCPService;

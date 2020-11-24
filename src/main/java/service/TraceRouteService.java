@@ -1,6 +1,6 @@
 package service;
 
-import model.pojo.ReportModel;
+import model.enums.PingType;
 import model.pojo.TraceRouteResultModel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -30,14 +30,22 @@ public class TraceRouteService implements IPinger {
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(p.getInputStream()));
             List<String> results = inputStream.lines().filter(Objects::nonNull).collect(Collectors.toList());
 
+            if (results.isEmpty()) {
+                BufferedReader errorStream = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+                List<String> errors = errorStream.lines().filter(Objects::nonNull).collect(Collectors.toList());
+                if (!errors.isEmpty()) {
+                    var errorMessage = String.join(",", errors);
+                    log.error("Error occurred when processing TraceRoute for this host :{}, with errorMessage :{}", host, errorMessage);
+                    ReportService.report(host, PingType.TRACE_ROUTE, errorMessage);
+                    return;
+                }
+            }
+
             TraceRouteResultModel traceRouteResultModel = new TraceRouteResultModel(host, results);
             ResultStoreService.storeTraceRouteResult(traceRouteResultModel);
         } catch (Exception e) {
             log.error("Error occurred when processing TraceRoute for this host :{}, with error", host, e);
-            ReportModel reportModel = new ReportModel();
-            reportModel.setHost(host);
-            reportModel.setTrace(e.getMessage());
-            ReportService.postDataToGivenUrl(reportModel);
+            ReportService.report(host, PingType.TRACE_ROUTE, e.getMessage());
         }
     }
 }

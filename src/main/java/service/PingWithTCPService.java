@@ -1,6 +1,6 @@
 package service;
 
-import model.pojo.ReportModel;
+import model.enums.PingType;
 import model.pojo.TCPResultModel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -41,10 +41,7 @@ public class PingWithTCPService implements IPinger {
             ResultStoreService.storeTCPResult(tcpResultModel);
         } catch (Exception e) {
             log.error("Error occurred when processing Ping-TCP for this host :{}, with error", host, e);
-            ReportModel reportModel = new ReportModel();
-            reportModel.setHost(host);
-            reportModel.setTcpPing(e.getMessage());
-            ReportService.postDataToGivenUrl(reportModel);
+            ReportService.report(host, PingType.TCP, e.getMessage());
         }
     }
 }

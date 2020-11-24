@@ -18,6 +18,8 @@ public class ApplicationUtil {
         if (instance == null) {
             instance = new ApplicationUtil();
             instance.getProperties();
+            instance.getObjectMapper();
+            instance.createStoreage();
         }
         return instance;
     }
@@ -32,5 +34,13 @@ public class ApplicationUtil {
             logger.error("Error occurred when read properties from yml with error:", e);
             throw new IllegalStateException("could'nt read yaml..");
         }
+    }
+
+    public ObjectMapper getObjectMapper() {
+        return new ObjectMapper();
+    }
+
+    public File createStoreage() {
+        return new File("store/file.txt");
     }
 }

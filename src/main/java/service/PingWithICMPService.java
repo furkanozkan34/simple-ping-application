@@ -1,7 +1,7 @@
 package service;
 
+import model.enums.PingType;
 import model.pojo.ICPMResultModel;
-import model.pojo.ReportModel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import properties.DynamicProperties;
@@ -32,14 +32,22 @@ public class PingWithICMPService implements IPinger {
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(p.getInputStream()));
             List<String> results = inputStream.lines().filter(Objects::nonNull).collect(Collectors.toList());
 
+            if (results.isEmpty()) {
+                BufferedReader errorStream = new BufferedReader(new InputStreamReader(p.getErrorStream()));
+                List<String> errors = errorStream.lines().filter(Objects::nonNull).collect(Collectors.toList());
+                if (!errors.isEmpty()) {
+                    var errorMessage = String.join(",", errors);
+                    log.error("Error occurred when processing Ping-ICMP for this host :{}, with errorMessage :{}", host, errorMessage);
+                    ReportService.report(host, PingType.ICMP, errorMessage);
+                    return;
+                }
+            }
+
             ICPMResultModel icpmResultModel = new ICPMResultModel(host, results);
             ResultStoreService.storeICMPResult(icpmResultModel);
         } catch (Exception e) {
             log.error("Error occurred when processing Ping-ICMP for this host :{}, with error", host, e);
-            ReportModel reportModel = new ReportModel();
-            reportModel.setHost(host);
-            reportModel.setIcpmPing(e.getMessage());
-            ReportService.postDataToGivenUrl(reportModel);
+            ReportService.report(host, PingType.ICMP, e.getMessage());
         }
     }
 

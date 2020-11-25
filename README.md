@@ -1,6 +1,7 @@
 ###simple-ping-application
 
 ###What makes simple-ping-application
+
 this project contains 3 scheduled functions which for 'ping with icmp', 'ping with tcp' and 'trace route' process.
 when application start up, it reads to dynamic properties from yml file.
 each scheduled function creates threads as much as dynamic host count in yml. these threads work as parallel.

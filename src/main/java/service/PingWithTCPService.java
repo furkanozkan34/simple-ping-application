@@ -6,7 +6,6 @@ import model.pojo.TCPResultModel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import properties.DynamicProperties;
-import util.ApplicationUtil;
 
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -35,7 +34,7 @@ public class PingWithTCPService implements IPinger {
             var uri = Constant.HTTPS.concat(host);
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(uri))
-                    .timeout(Duration.ofSeconds(timeoutDuration))
+                    .timeout(Duration.ofSeconds(Long.valueOf(timeoutDuration)))
                     .build();
             var startTime = System.nanoTime();
             HttpResponse<String> response = client.send(request, HttpResponse.BodyHandlers.ofString());

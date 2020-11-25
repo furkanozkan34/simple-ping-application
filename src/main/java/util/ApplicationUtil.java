@@ -1,16 +1,17 @@
 package util;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.dataformat.yaml.YAMLFactory;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.yaml.snakeyaml.Yaml;
 import properties.DynamicProperties;
 
-import java.io.File;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class ApplicationUtil {
 
-    private static final Logger logger = LogManager.getLogger(ApplicationUtil.class);
+    private static final Logger log = LogManager.getLogger(ApplicationUtil.class);
 
     private static ApplicationUtil instance = null;
 
@@ -25,12 +26,11 @@ public class ApplicationUtil {
 
     public DynamicProperties getProperties() {
 
-        try {
-            ObjectMapper mapper = new ObjectMapper(new YAMLFactory());
-            mapper.findAndRegisterModules();
-            return mapper.readValue(new File("src/main/resources/application.yaml"), DynamicProperties.class);
-        } catch (Exception e) {
-            logger.error("Error occurred when read properties from yml with error:", e);
+        Yaml yaml = new Yaml();
+        try (InputStream in = ApplicationUtil.class.getResourceAsStream("/application.yaml")) {
+            return yaml.loadAs(in, DynamicProperties.class);
+        } catch (IOException e) {
+            log.error("Could'nt read yml because of error :", e);
             throw new IllegalStateException("could'nt read yaml..");
         }
     }

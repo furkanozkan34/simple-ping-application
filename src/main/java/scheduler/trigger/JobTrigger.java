@@ -17,9 +17,9 @@ public class JobTrigger {
     public void startAllJobs() {
 
         DynamicProperties dynamicProperties = ApplicationUtil.getInstance().getProperties();
-        triggerForICMP(dynamicProperties.getFixedDelaySecondForICMP().intValue());
-        triggerForTCP(dynamicProperties.getFixedDelaySecondForTCP().intValue());
-        triggerForTraceRoute(dynamicProperties.getFixedDelaySecondForTraceRoute().intValue());
+        triggerForICMP(Integer.valueOf(dynamicProperties.getFixedDelaySecondForICMP()));
+        triggerForTCP(Integer.valueOf(dynamicProperties.getFixedDelaySecondForTCP()));
+        triggerForTraceRoute(Integer.valueOf(dynamicProperties.getFixedDelaySecondForTraceRoute()));
     }
 
     private void triggerForICMP(int fixedDelay) {

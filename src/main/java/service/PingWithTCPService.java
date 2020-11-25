@@ -5,6 +5,7 @@ import model.enums.PingType;
 import model.pojo.TCPResultModel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import properties.DynamicProperties;
 import util.ApplicationUtil;
 
 import java.net.URI;
@@ -17,10 +18,12 @@ import java.util.concurrent.TimeUnit;
 public class PingWithTCPService implements IPinger {
 
     private final String host;
+    private final DynamicProperties dynamicProperties;
     private static final Logger log = LogManager.getLogger(PingWithTCPService.class);
 
-    public PingWithTCPService(String host) {
+    public PingWithTCPService(String host, DynamicProperties dynamicProperties) {
         this.host = host;
+        this.dynamicProperties = dynamicProperties;
     }
 
     @Override
@@ -28,7 +31,7 @@ public class PingWithTCPService implements IPinger {
 
         try {
             HttpClient client = HttpClient.newHttpClient();
-            var timeoutDuration = ApplicationUtil.getInstance().getProperties().getTimeoutDurationForTCP();
+            var timeoutDuration = dynamicProperties.getTimeoutDurationForTCP();
             var uri = Constant.HTTPS.concat(host);
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(uri))

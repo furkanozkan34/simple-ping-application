@@ -5,7 +5,7 @@ import model.enums.PingType;
 import model.pojo.TraceRouteResultModel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import util.ApplicationUtil;
+import properties.DynamicProperties;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -16,17 +16,19 @@ import java.util.stream.Collectors;
 public class TraceRouteService implements IPinger {
 
     private final String host;
+    private final DynamicProperties dynamicProperties;
     private static final Logger log = LogManager.getLogger(TraceRouteService.class);
 
-    public TraceRouteService(String host) {
+    public TraceRouteService(String host, DynamicProperties dynamicProperties) {
         this.host = host;
+        this.dynamicProperties = dynamicProperties;
     }
 
     @Override
     public void run() {
 
         try {
-            var command = ApplicationUtil.getInstance().getProperties().getTraceRouteCommand().concat(Constant.BLANK).concat(host);
+            var command = dynamicProperties.getTraceRouteCommand().concat(Constant.BLANK).concat(host);
             Process p = Runtime.getRuntime().exec(command);
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(p.getInputStream()));
             List<String> results = inputStream.lines().filter(Objects::nonNull).collect(Collectors.toList());

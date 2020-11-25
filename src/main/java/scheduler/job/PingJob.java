@@ -23,6 +23,7 @@ public class PingJob implements Job {
             pingExecutor.run(pingType);
         } catch (Exception e) {
             log.error("Undefined PingType, job couldn't start because of this error:", e);
+            throw new IllegalArgumentException("Undefined PingType");
         }
     }
 }

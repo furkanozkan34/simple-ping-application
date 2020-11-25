@@ -6,7 +6,6 @@ import model.pojo.ICPMResultModel;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import properties.DynamicProperties;
-import util.ApplicationUtil;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -17,17 +16,18 @@ import java.util.stream.Collectors;
 public class PingWithICMPService implements IPinger {
 
     private final String host;
+    private final DynamicProperties dynamicProperties;
     private static final Logger log = LogManager.getLogger(PingWithICMPService.class);
 
-    public PingWithICMPService(String host) {
+    public PingWithICMPService(String host, DynamicProperties dynamicProperties) {
         this.host = host;
+        this.dynamicProperties = dynamicProperties;
     }
 
     @Override
     public void run() {
 
         try {
-            DynamicProperties dynamicProperties = ApplicationUtil.getInstance().getProperties();
             var command = getCommand(dynamicProperties, host);
             Process p = Runtime.getRuntime().exec(command);
             BufferedReader inputStream = new BufferedReader(new InputStreamReader(p.getInputStream()));
@@ -52,7 +52,7 @@ public class PingWithICMPService implements IPinger {
         }
     }
 
-    private String getCommand(DynamicProperties dynamicProperties, String host) {
+     String getCommand(DynamicProperties dynamicProperties, String host) {
         return dynamicProperties.getPingCommand()
                 .concat(Constant.BLANK)
                 .concat(dynamicProperties.getPingCommandPrefix())

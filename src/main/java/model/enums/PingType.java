@@ -4,6 +4,8 @@ public enum PingType {
 
     ICMP,
     TCP,
-    TRACE_ROUTE
+    TRACE_ROUTE,
+
+    UN_DEFINED;
 }
 

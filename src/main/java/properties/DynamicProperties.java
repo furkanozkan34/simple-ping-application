@@ -72,4 +72,24 @@ public class DynamicProperties {
     public String getGivenUrlToPostReport() {
         return givenUrlToPostReport;
     }
+
+    public void setHosts(List<String> hosts) {
+        this.hosts = hosts;
+    }
+
+    public void setGivenUrlToPostReport(String givenUrlToPostReport) {
+        this.givenUrlToPostReport = givenUrlToPostReport;
+    }
+
+    public void setPingCommand(String pingCommand) {
+        this.pingCommand = pingCommand;
+    }
+
+    public void setPingCommandPrefix(String pingCommandPrefix) {
+        this.pingCommandPrefix = pingCommandPrefix;
+    }
+
+    public void setPingCommandCount(String pingCommandCount) {
+        this.pingCommandCount = pingCommandCount;
+    }
 }
